@@ -22,32 +22,75 @@ public class HeroScript : MonoBehaviour {
     void Update()
     {
         // TODO: This is just keyboard inputs to test out how the Hero should be moving. The real implementation for tablet will be coming soon!
-        if (Input.GetKey(KeyCode.UpArrow))
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    //HeroRB.velocity.Set(0, movementSpeed);
+        //    HeroRB.velocity = new Vector2(0, movementSpeed);
+        //    HeroAnimation.Play("HeroUp");
+        //}
+        //else if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    //HeroRB.velocity.Set(0, -movementSpeed);
+        //    HeroRB.velocity = new Vector2(0, -movementSpeed);
+        //    HeroAnimation.Play("HeroDown");
+        //}
+        //else if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    //HeroRB.velocity.Set(movementSpeed, 0);
+        //    HeroRB.velocity = new Vector2(movementSpeed, 0);
+        //    HeroAnimation.Play("HeroRight");
+        //}
+        //else if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    //HeroRB.velocity.Set(-movementSpeed, 0);
+        //    HeroRB.velocity = new Vector2(-movementSpeed, 0);
+        //    HeroAnimation.Play("HeroLeft");
+        //}
+        //else
+        //    HeroRB.velocity = new Vector2(0, 0);
+        // TODO: This is just keyboard inputs to test out how the Hero should be moving. The real implementation for tablet will be coming soon!
+    }
+
+    public void moveUp()
+    {
+        // "new" can be very expensive thus using to check if the player is moving in the right direction or no
+        if (!Mathf.Approximately(HeroRB.velocity.y, movementSpeed))
         {
-            //HeroRB.velocity.Set(0, movementSpeed);
             HeroRB.velocity = new Vector2(0, movementSpeed);
             HeroAnimation.Play("HeroUp");
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+    }
+    public void moveDown()
+    {
+        if (!Mathf.Approximately(HeroRB.velocity.y, -movementSpeed))
         {
-            //HeroRB.velocity.Set(0, -movementSpeed);
             HeroRB.velocity = new Vector2(0, -movementSpeed);
             HeroAnimation.Play("HeroDown");
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+    }
+    public void moveRight()
+    {
+        if (!Mathf.Approximately(HeroRB.velocity.x, movementSpeed))
         {
-            //HeroRB.velocity.Set(movementSpeed, 0);
             HeroRB.velocity = new Vector2(movementSpeed, 0);
             HeroAnimation.Play("HeroRight");
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+    }
+    public void moveLeft()
+    {
+        if (!Mathf.Approximately(HeroRB.velocity.x, -movementSpeed))
         {
-            //HeroRB.velocity.Set(-movementSpeed, 0);
             HeroRB.velocity = new Vector2(-movementSpeed, 0);
             HeroAnimation.Play("HeroLeft");
         }
-        else
+    }
+    public void stopMoving()
+    {
+        // Using the magnitude of the velocity can help check whether is the character moving or not
+        if (!Mathf.Approximately(HeroRB.velocity.sqrMagnitude, 0))    // This is for precision error check!
+        {
             HeroRB.velocity = new Vector2(0, 0);
-        // TODO: This is just keyboard inputs to test out how the Hero should be moving. The real implementation for tablet will be coming soon!
+            //Debug.Log("Player has stopped moving");
+        }
     }
 }
