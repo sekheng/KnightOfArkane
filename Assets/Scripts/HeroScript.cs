@@ -6,8 +6,10 @@ using System.Collections;
 /// All of it's movement logic and movement animation is here
 /// </summary>
 public class HeroScript : MonoBehaviour {
-    Animator HeroAnimation;
-    Rigidbody2D HeroRB; // We will be using the velocity of the character instead!
+    private Animator HeroAnimation;
+    private Rigidbody2D HeroRB; // We will be using the velocity of the character instead!
+    [Tooltip("This will be the consistent movement for up down left right!")]
+    public float movementSpeed = 5.0f; 
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +19,35 @@ public class HeroScript : MonoBehaviour {
         HeroAnimation.Play("HeroDown"); // We will default the animation to play hero down!
 	}
 	
-    // Using Fixed Update so that the movement call will be consistent and used for physics
-    void FixedUpdate()
+    void Update()
     {
-
+        // TODO: This is just keyboard inputs to test out how the Hero should be moving. The real implementation for tablet will be coming soon!
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            //HeroRB.velocity.Set(0, movementSpeed);
+            HeroRB.velocity = new Vector2(0, movementSpeed);
+            HeroAnimation.Play("HeroUp");
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            //HeroRB.velocity.Set(0, -movementSpeed);
+            HeroRB.velocity = new Vector2(0, -movementSpeed);
+            HeroAnimation.Play("HeroDown");
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            //HeroRB.velocity.Set(movementSpeed, 0);
+            HeroRB.velocity = new Vector2(movementSpeed, 0);
+            HeroAnimation.Play("HeroRight");
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            //HeroRB.velocity.Set(-movementSpeed, 0);
+            HeroRB.velocity = new Vector2(-movementSpeed, 0);
+            HeroAnimation.Play("HeroLeft");
+        }
+        else
+            HeroRB.velocity = new Vector2(0, 0);
+        // TODO: This is just keyboard inputs to test out how the Hero should be moving. The real implementation for tablet will be coming soon!
     }
 }
