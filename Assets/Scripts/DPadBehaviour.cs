@@ -48,4 +48,24 @@ public class DPadBehaviour : MonoBehaviour {
         ToControlThePlayer.moveLeft();
         playerHasPressedTheButton = true;
     }
+    public void moveUpRight()
+    {
+        ToControlThePlayer.moveUpRight();
+        playerHasPressedTheButton = true;
+    }
+    public void moveUpLeft()
+    {
+        ToControlThePlayer.moveUpLeft();
+        playerHasPressedTheButton = true;
+    }
+    public void moveDownRight()
+    {
+        ToControlThePlayer.moveDownRight();
+        playerHasPressedTheButton = true;
+    }
+    public void moveDownLeft()
+    {
+        ToControlThePlayer.moveDownLeft();
+        playerHasPressedTheButton = true;
+    }
 }
