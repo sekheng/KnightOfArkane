@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
-
+/// <summary>
+/// This is an observer pattern!
+/// Only use it if you are confident about it.
+/// HealthUIScript is using it!
+/// </summary>
 public class MessageSystem : MonoBehaviour {
 
     private Dictionary<string, UnityEvent> eventsDictionary;    // This acts like a hashmap! Right now its values shall be the function calls!
@@ -14,8 +18,7 @@ public class MessageSystem : MonoBehaviour {
         {
             if (!cantTouchThisSystem)
             {
-                //cantTouchThisSystem = GameObject.FindGameObjectWithTag("MessageSystem").GetComponent<MessageSystem>();
-                cantTouchThisSystem = new MessageSystem();
+                cantTouchThisSystem = GameObject.FindGameObjectWithTag("MessageSystem").GetComponent<MessageSystem>();
                 cantTouchThisSystem.Start();
             }
             return cantTouchThisSystem;
@@ -56,7 +59,7 @@ public class MessageSystem : MonoBehaviour {
         return false;
     }
     
-    public bool TriggerEvent(string zeEventName)
+    public bool triggerEventCall(string zeEventName)
     {
         UnityEvent zeEventCall = null;
         if (eventsDictionary.TryGetValue(zeEventName, out zeEventCall))
