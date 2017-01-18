@@ -14,6 +14,7 @@ public class EnemyScript : MonoBehaviour {
     //}
     void OnTriggerStay2D(Collider2D otherCollider)  // Check and see if the other collider are staying within the trigger area. If so, deal damage!!!
     {
-
+        Debug.Log("Staying in Collision!");
+        otherCollider.BroadcastMessage("modifyHealth", -DPS * Time.deltaTime);
     }
 }
