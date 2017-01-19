@@ -45,15 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CoinUIScript.cs" />
      <Compile Include="Assets\Scripts\DPadBehaviour.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\FollowHeroScript.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\HealthUIScript.cs" />
+     <Compile Include="Assets\Scripts\HeroResourcesScript.cs" />
      <Compile Include="Assets\Scripts\HeroScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\MessageSystem.cs" />
      <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
+     <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
