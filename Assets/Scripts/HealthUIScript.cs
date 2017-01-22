@@ -26,7 +26,21 @@ public class HealthUIScript : MonoBehaviour {
     void BeginScalingOfHealthBar()  // scale the health bar automatically
     {
         // Get the original scale X then mulitply by the ratio of current health to max health. other values remains the same
-        float resultingScaleX = originalScaleX * (playerHealth.getCurrentHealth() / playerHealth.max_health_);
+        float percentageOfPlayerOverallHealth = playerHealth.getCurrentHealth() / playerHealth.max_health_;
+        if (percentageOfPlayerOverallHealth <= 0.25f) // Checking whether is it below 25 percent, change to red colour!
+        {
+
+        }
+        else if (percentageOfPlayerOverallHealth <= 0.5f)   // less than 50 percent, change to orange colour!
+        {
+
+        }
+        else
+        {
+            // It shall always stay at green color!
+
+        }
+        float resultingScaleX = originalScaleX * percentageOfPlayerOverallHealth;
         //Debug.Log("Resulting Scale X:" + resultingScaleX);
         //Debug.Log("PlayerHealth" + playerHealth.getCurrentHealth());
         transform.localScale = new Vector3(resultingScaleX, transform.localScale.y, transform.localScale.z);
