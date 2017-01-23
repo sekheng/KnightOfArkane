@@ -60,5 +60,8 @@ public class GameStateScript : MonoBehaviour {
             }
         }
     }
-
+    public void ChangeScriptState(int zeState)
+    {
+        ChangeState((GAMESTATE)zeState);
+    }
 }

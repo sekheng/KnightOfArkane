@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class NPCInteractScript : MonoBehaviour {
     // This is to check for whether the player is within it's interaction/trigger zone!
@@ -43,9 +44,20 @@ public class NPCInteractScript : MonoBehaviour {
             // Not only do we have to change the state, we have to change the chat text box!
             GameStateScript.ChangeState(GameStateScript.GAMESTATE.CHATTING);
             GameObject[] AllChatUI = GameObject.FindGameObjectsWithTag("ChattingUI");
+            Text theSupposeChangedText = null;
             foreach (GameObject zeChatUI in AllChatUI)  // We will slowly iterate through the UI Chat Box and put in the stuff we see fit!
             {
-
+                // Unfortunately, hardcoding will be the fastest way for now
+                if (zeChatUI.name.Equals("Description Text"))
+                {
+                    theSupposeChangedText = zeChatUI.GetComponent<Text>();
+                    theSupposeChangedText.text = Description;
+                }
+                else if (zeChatUI.name.Equals("NPC Name"))
+                {
+                    theSupposeChangedText = zeChatUI.GetComponent<Text>();
+                    theSupposeChangedText.text = gameObject.name;
+                }
             }
         }
     }
