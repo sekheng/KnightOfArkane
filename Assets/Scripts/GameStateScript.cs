@@ -9,6 +9,7 @@ public class GameStateScript : MonoBehaviour {
         CHATTING,
         LOSE,
         WIN,
+        SHOPPING,
         TOTAL_STATE,
     };
 
