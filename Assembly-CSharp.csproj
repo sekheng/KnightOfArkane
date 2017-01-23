@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\InvokeMessageScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\MessageSystem.cs" />
+     <Compile Include="Assets\Scripts\MinimapScript.cs" />
      <Compile Include="Assets\Scripts\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
