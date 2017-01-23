@@ -48,15 +48,21 @@ public class NPCInteractScript : MonoBehaviour {
             foreach (GameObject zeChatUI in AllChatUI)  // We will slowly iterate through the UI Chat Box and put in the stuff we see fit!
             {
                 // Unfortunately, hardcoding will be the fastest way for now
-                if (zeChatUI.name.Equals("Description Text"))
+                if (zeChatUI.name.Equals("Description Text"))   // Change the text for Description box
                 {
                     theSupposeChangedText = zeChatUI.GetComponent<Text>();
                     theSupposeChangedText.text = Description;
                 }
-                else if (zeChatUI.name.Equals("NPC Name"))
+                else if (zeChatUI.name.Equals("NPC Name"))  // We change the NPC Name box
                 {
                     theSupposeChangedText = zeChatUI.GetComponent<Text>();
                     theSupposeChangedText.text = gameObject.name;
+                }
+                else if (zeChatUI.name.Equals("NPC Image")) // Insert an image for the display of NPC Image!
+                {
+                    SpriteRenderer zeOwnSprite = GetComponent<SpriteRenderer>();
+                    Image zeNPCImage = zeChatUI.GetComponent<Image>();
+                    zeNPCImage.sprite = zeOwnSprite.sprite; // Change the sprite!
                 }
             }
         }

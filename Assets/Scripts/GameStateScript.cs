@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GameStateScript : MonoBehaviour {
     public enum GAMESTATE
     {
-        PLAYING,
+        PLAYING = 0,
         CHATTING,
         LOSE,
         WIN,
