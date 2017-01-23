@@ -12,12 +12,14 @@ public class NPCInteractScript : MonoBehaviour {
 
     void OnEnable()     // Registering to the MessageSystem
     {
-        MessageSystem.instance.setListener("PressedA", InteractWithNPC);
+        if (MessageSystem.instance != null)
+            MessageSystem.instance.setListener("PressedA", InteractWithNPC);
     }
 
     void OnDisable()    // remove itself from the MessageSystem
     {
-        MessageSystem.instance.removeListener("PressedA", InteractWithNPC);
+        if (MessageSystem.instance != null)
+            MessageSystem.instance.removeListener("PressedA", InteractWithNPC);
     }
 	
     void OnTriggerStay2D(Collider2D otherCollider)

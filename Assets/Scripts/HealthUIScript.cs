@@ -20,11 +20,13 @@ public class HealthUIScript : MonoBehaviour {
 	
     void OnEnable() // When it is turned on, subscribe itself to the MessageSystem
     {
-        MessageSystem.instance.setListener("ScaleHealthBar", BeginScalingOfHealthBar);
+        if (MessageSystem.instance)
+            MessageSystem.instance.setListener("ScaleHealthBar", BeginScalingOfHealthBar);
     }
     void OnDisable()    // When turned off, unsubscribe itself to the MessageSystem
     {
-        MessageSystem.instance.removeListener("ScaleHealthBar", BeginScalingOfHealthBar);
+        if (MessageSystem.instance)
+            MessageSystem.instance.removeListener("ScaleHealthBar", BeginScalingOfHealthBar);
     }
 
     void BeginScalingOfHealthBar()  // scale the health bar automatically

@@ -41,7 +41,8 @@ public class HealthScript : MonoBehaviour {
         }
         else if (health_ >= max_health_)
             health_ = max_health_;
-        MessageSystem.instance.triggerEventCall("ScaleHealthBar");  // Calling the event
+        if (MessageSystem.instance != null)
+            MessageSystem.instance.triggerEventCall("ScaleHealthBar");  // Calling the event
         return whatToReturn;
     }
 

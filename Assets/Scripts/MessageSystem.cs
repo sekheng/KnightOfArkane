@@ -19,6 +19,8 @@ public class MessageSystem : MonoBehaviour {
             if (!cantTouchThisSystem)
             {
                 cantTouchThisSystem = GameObject.FindGameObjectWithTag("MessageSystem").GetComponent<MessageSystem>();
+                if (!cantTouchThisSystem)   // If can't find the message system. return null instead
+                    return null;
                 cantTouchThisSystem.Start();
             }
             return cantTouchThisSystem;

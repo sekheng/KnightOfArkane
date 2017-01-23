@@ -10,11 +10,13 @@ public class HeroResourcesScript : MonoBehaviour {
     void modifyCoins(int zeValue)
     {
         coinResources += zeValue;
-        MessageSystem.instance.triggerEventCall("ModifyCoin");
+        if (MessageSystem.instance)
+            MessageSystem.instance.triggerEventCall("ModifyCoin");
     }
     void modifyResource(int zeValue)
     {
         rareResources += zeValue;
-        MessageSystem.instance.triggerEventCall("ModifyResource");
+        if (MessageSystem.instance)
+            MessageSystem.instance.triggerEventCall("ModifyResource");
     }
 }
