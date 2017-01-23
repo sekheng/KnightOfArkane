@@ -10,6 +10,9 @@ public class LevelUIScript : MonoBehaviour {
 
     private Texture2D m_Background, m_TextColor;
 
+    [Tooltip("The Level UI to display")]
+    public GameObject theLevelUI;
+
     void Start()
     {
         m_Background = new Texture2D(1, 1);
@@ -20,12 +23,14 @@ public class LevelUIScript : MonoBehaviour {
 
         allTheColor[0] = new Color32(0, 1, 143, 255);
         m_Background.SetPixels32(allTheColor);  // Setting the background color
+
+        
     }
 	
-    void OnGUI()
-    {
-        PosOfText.x = transform.position.x;
-        PosOfText.y = transform.position.y + transform.localScale.y;
-        GUI.DrawTexture(PosOfText, m_Background);   // Trying to render out the background first!
-    }
+    //void OnGUI()
+    //{
+    //    PosOfText.x = transform.position.x;
+    //    PosOfText.y = transform.position.y + transform.localScale.y;
+    //    GUI.DrawTexture(PosOfText, m_Background);   // Trying to render out the background first!
+    //}
 }
