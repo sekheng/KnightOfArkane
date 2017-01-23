@@ -17,7 +17,7 @@ public class CoinUIScript : MonoBehaviour {
         MessageSystem.instance.setListener("ModifyCoin", ChangeCoinValue);
     }
 
-    void OnDisable()    // Registering to the MessageSystem
+    void OnDisable()    // remove itself from the MessageSystem
     {
         MessageSystem.instance.removeListener("ModifyCoin", ChangeCoinValue);
     }

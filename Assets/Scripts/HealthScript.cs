@@ -20,7 +20,8 @@ public class HealthScript : MonoBehaviour {
         timeToRegenerate += Time.deltaTime;
         if (!Mathf.Approximately(max_health_, health_) && timeToRegenerate > 2)   // If it is more than 2 second and health is not the same as max health
         {
-            health_ = Mathf.Min(max_health_, health_ + Regeneration * Time.deltaTime);
+            modifyHealth(Regeneration * Time.deltaTime);
+            //Debug.Log("Regenerating!");
         }
     }
 	
