@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\HeroResourcesScript.cs" />
      <Compile Include="Assets\Scripts\HeroScript.cs" />
      <Compile Include="Assets\Scripts\InvokeMessageScript.cs" />
+     <Compile Include="Assets\Scripts\LevelUIScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\MessageSystem.cs" />
      <Compile Include="Assets\Scripts\MinimapScript.cs" />
