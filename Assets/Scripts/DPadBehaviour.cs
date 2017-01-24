@@ -18,11 +18,11 @@ public class DPadBehaviour : MonoBehaviour {
         GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");  // Getting the plaer first
         ToControlThePlayer = thePlayer.GetComponent<HeroScript>();
         // TODO: This is for debugging purpose only!
-        RectTransform[] AllOfChildrenTransform = GetComponentsInChildren<RectTransform>();
-        foreach (RectTransform eachMoveButton in AllOfChildrenTransform)
-        {
-            Debug.Log("UI Stuff:" + eachMoveButton.position.x + "," + eachMoveButton.position.y + "," + eachMoveButton.sizeDelta.x + "," + eachMoveButton.sizeDelta.y);
-        }
+        //RectTransform[] AllOfChildrenTransform = GetComponentsInChildren<RectTransform>();
+        //foreach (RectTransform eachMoveButton in AllOfChildrenTransform)
+        //{
+        //    Debug.Log("UI Stuff:" + eachMoveButton.position.x + "," + eachMoveButton.position.y + "," + eachMoveButton.sizeDelta.x + "," + eachMoveButton.sizeDelta.y);
+        //}
     }
 
     void Update()   // Need to check whether is there any fingers touching any of the buttons by checking it's children!

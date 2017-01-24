@@ -24,7 +24,12 @@ public class LevelUIScript : MonoBehaviour {
         //allTheColor[0] = new Color32(0, 1, 143, 255);
         //m_Background.SetPixels32(allTheColor);  // Setting the background color
 
-        
+        GameObject zeCreatedLevelUI = Instantiate(theLevelUI);  //  Creating the Level UI
+        zeCreatedLevelUI.transform.parent = transform;      // Making the UI's transform parent to be this
+        TextMesh zeUIText = zeCreatedLevelUI.GetComponent<TextMesh>();
+        zeUIText.text = "LVL:" + m_Level;
+        Vector3 localScaleToWorld = transform.localScale;
+        zeCreatedLevelUI.transform.position = new Vector3(transform.position.x + (zeUIText.fontSize * zeUIText.text.Length * transform.localScale.x), transform.position.y + (localScaleToWorld.y * 0.5f), transform.position.z); // Making the UI to display above the character
     }
 	
     //void OnGUI()
