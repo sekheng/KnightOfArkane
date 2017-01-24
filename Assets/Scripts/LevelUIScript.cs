@@ -5,24 +5,24 @@ public class LevelUIScript : MonoBehaviour {
     [Tooltip("Set the level of the character!")]
     public int m_Level = 20;
 
-    [Tooltip("Set the Width and Height of the Level UI. The Position doesn't matter since it will be attach on top of the character")]
-    public Rect PosOfText = new Rect(0, 0, 50, 50);
+    //[Tooltip("Set the Width and Height of the Level UI. The Position doesn't matter since it will be attach on top of the character")]
+    //public Rect PosOfText = new Rect(0, 0, 50, 50);
 
-    private Texture2D m_Background, m_TextColor;
+    //private Texture2D m_Background, m_TextColor;
 
     [Tooltip("The Level UI to display")]
     public GameObject theLevelUI;
 
     void Start()
     {
-        m_Background = new Texture2D(1, 1);
-        m_TextColor = new Texture2D(1, 1);
-        Color32[] allTheColor = new Color32[1];
-        allTheColor[0] = new Color32(244, 160, 4, 255);
-        m_TextColor.SetPixels32(allTheColor);   // Setting the text color
+        //m_Background = new Texture2D(1, 1);
+        //m_TextColor = new Texture2D(1, 1);
+        //Color32[] allTheColor = new Color32[1];
+        //allTheColor[0] = new Color32(244, 160, 4, 255);
+        //m_TextColor.SetPixels32(allTheColor);   // Setting the text color
 
-        allTheColor[0] = new Color32(0, 1, 143, 255);
-        m_Background.SetPixels32(allTheColor);  // Setting the background color
+        //allTheColor[0] = new Color32(0, 1, 143, 255);
+        //m_Background.SetPixels32(allTheColor);  // Setting the background color
 
         
     }

@@ -17,6 +17,12 @@ public class DPadBehaviour : MonoBehaviour {
 	void Start () {
         GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");  // Getting the plaer first
         ToControlThePlayer = thePlayer.GetComponent<HeroScript>();
+        // TODO: This is for debugging purpose only!
+        RectTransform[] AllOfChildrenTransform = GetComponentsInChildren<RectTransform>();
+        foreach (RectTransform eachMoveButton in AllOfChildrenTransform)
+        {
+            Debug.Log("UI Stuff:" + eachMoveButton.position.x + "," + eachMoveButton.position.y + "," + eachMoveButton.sizeDelta.x + "," + eachMoveButton.sizeDelta.y);
+        }
     }
 
     void Update()   // Need to check whether is there any fingers touching any of the buttons by checking it's children!
@@ -32,8 +38,8 @@ public class DPadBehaviour : MonoBehaviour {
                 {
                     // First part will be checking whether the finger's X position is inside the X-boundary of the buttons
                     // Second part is checking whether the finger's Y position is inside the Y-boundary of the buttons
-                    if (zeFingerTouch.position.x < eachMoveButton.position.x + (eachMoveButton.rect.width * offsetOfButtonSize) && zeFingerTouch.position.x > eachMoveButton.position.x - (eachMoveButton.rect.width * offsetOfButtonSize)
-                        && zeFingerTouch.position.y < eachMoveButton.position.y + (eachMoveButton.rect.height * offsetOfButtonSize) && zeFingerTouch.position.y > eachMoveButton.position.y - (eachMoveButton.rect.height * offsetOfButtonSize))    // Check whether any of the touches are within the button
+                    if (zeFingerTouch.position.x < eachMoveButton.position.x + (eachMoveButton.sizeDelta.x * offsetOfButtonSize) && zeFingerTouch.position.x > eachMoveButton.position.x - (eachMoveButton.sizeDelta.x * offsetOfButtonSize)
+                        && zeFingerTouch.position.y < eachMoveButton.position.y + (eachMoveButton.sizeDelta.y * offsetOfButtonSize) && zeFingerTouch.position.y > eachMoveButton.position.y - (eachMoveButton.sizeDelta.y * offsetOfButtonSize))    // Check whether any of the touches are within the button
                     {
                         playerHasPressedTheButton = true;
                         eachMoveButton.gameObject.BroadcastMessage("MovePlayer");
