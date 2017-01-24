@@ -28,8 +28,9 @@ public class LevelUIScript : MonoBehaviour {
         zeCreatedLevelUI.transform.parent = transform;      // Making the UI's transform parent to be this
         TextMesh zeUIText = zeCreatedLevelUI.GetComponent<TextMesh>();
         zeUIText.text = "LVL:" + m_Level;
-        Vector3 localScaleToWorld = transform.localScale;
-        zeCreatedLevelUI.transform.position = new Vector3(transform.position.x + (zeUIText.fontSize * zeUIText.text.Length * transform.localScale.x), transform.position.y + (localScaleToWorld.y * 0.5f), transform.position.z); // Making the UI to display above the character
+        float offsetOfWord = zeUIText.text.Length * zeUIText.fontSize * 0.5f; // In order to make the words look centered to the character
+        Debug.Log("the word offset:" + offsetOfWord);
+        zeCreatedLevelUI.transform.position = new Vector3(transform.position.x - offsetOfWord, transform.position.y + (transform.localScale.y * 0.5f), transform.position.z); // Making the UI to display above the character
     }
 	
     //void OnGUI()
