@@ -39,7 +39,8 @@ public class LevelUIScript : MonoBehaviour {
         float unitWidthOfSprite = characterSprite.sprite.textureRect.width / characterSprite.sprite.pixelsPerUnit;
         float unitHeightOfSprite = characterSprite.sprite.textureRect.height / characterSprite.sprite.pixelsPerUnit;
 
-        //Vector2 EstimatedScaleOfCharacter = new Vector2()
+        Vector2 EstimatedScaleOfCharacterForSprite = new Vector2(characterSprite.sprite.textureRect.width / unitWidthOfSprite, characterSprite.sprite.textureRect.height / unitHeightOfSprite);
+        Debug.Log("Just the scale of sprite without it being scaled!:" + EstimatedScaleOfCharacterForSprite);
 
         //float offsetOfWord = zeUIText.text.Length * zeUIText.fontSize * 0.5f; // In order to make the words look centered to the character
         float OffSetForCharacterY = (transform.localScale.y * 0.5f) + (characterSprite.sprite.textureRect.height * 0.5f);   // This isn't accurate. So need to convert again.
