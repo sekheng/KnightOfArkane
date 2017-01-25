@@ -9,13 +9,18 @@ public class ButtonFeedbackScript : MonoBehaviour {
     [Tooltip("The string that you want to display for your toastbox when click once!")]
     public string theToastBoxMessage = "";
 
+    [Tooltip("How many time do u want it to count down")]
+    public int m_countdown = 1;
+
     // Similar to the stuff on android studio
-    private AndroidJavaObject currentActivity, currentContext;
-    private AndroidJavaClass unityPlayer;
+    private static AndroidJavaObject currentActivity, currentContext;
+    private static AndroidJavaClass unityPlayer;
+    private string theIntentedMessage;  // so that we can have multiple different messages displayed 
 
 	// Use this for initialization
 	void Start ()
     {
+        theIntentedMessage = theToastBoxMessage;    // The first message will definitely be the click message!
 #if UNITY_ANDROID
         if (Application.platform == RuntimePlatform.Android)    // Checking is it running on android phone!
         {

@@ -27,6 +27,7 @@ public class LoadScene : MonoBehaviour {
     // Using Fixed Update so that it is being called once every frame!
     void FixedUpdate()
     {
+#if UNITY_ANDROID
         for (int number = 0; number < allTheButtons.Count; ++number)
         {
             if (Input.GetKeyDown(allTheButtons[number]))
@@ -34,5 +35,6 @@ public class LoadScene : MonoBehaviour {
                 SceneManager.LoadScene(allSceneNames[number].ToString());
             }
         }
+#endif
     }
 }
