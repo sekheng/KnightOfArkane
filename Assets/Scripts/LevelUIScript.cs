@@ -13,6 +13,8 @@ public class LevelUIScript : MonoBehaviour {
     [Tooltip("The Level UI to display")]
     public GameObject theLevelUI;
 
+    private SpriteRenderer characterSprite; // Because scale doesn't match up with Sprit'e width and height. This will be used for offset!
+
     void Start()
     {
         //m_Background = new Texture2D(1, 1);
@@ -24,13 +26,28 @@ public class LevelUIScript : MonoBehaviour {
         //allTheColor[0] = new Color32(0, 1, 143, 255);
         //m_Background.SetPixels32(allTheColor);  // Setting the background color
 
+        characterSprite = GetComponent<SpriteRenderer>();
         GameObject zeCreatedLevelUI = Instantiate(theLevelUI);  //  Creating the Level UI
-        zeCreatedLevelUI.transform.parent = transform;      // Making the UI's transform parent to be this
         TextMesh zeUIText = zeCreatedLevelUI.GetComponent<TextMesh>();
         zeUIText.text = "LVL:" + m_Level;
-        float offsetOfWord = zeUIText.text.Length * zeUIText.fontSize * 0.5f; // In order to make the words look centered to the character
-        Debug.Log("the word offset:" + offsetOfWord);
-        zeCreatedLevelUI.transform.position = new Vector3(transform.position.x - offsetOfWord, transform.position.y + (transform.localScale.y * 0.5f), transform.position.z); // Making the UI to display above the character
+
+        float ToConvertToWorldY = Camera.main.orthographicSize * 2;
+        float ToConvertToWorldX = ToConvertToWorldY * Screen.width / Screen.height; // using ToConvertToWorldY * aspect ratio
+        Debug.Log("ToConvertToWorldY:" + ToConvertToWorldY);
+        Debug.Log("ToConvertToWorldX:" + ToConvertToWorldX);
+
+        float unitWidthOfSprite = characterSprite.sprite.textureRect.width / characterSprite.sprite.pixelsPerUnit;
+        float unitHeightOfSprite = characterSprite.sprite.textureRect.height / characterSprite.sprite.pixelsPerUnit;
+
+        //Vector2 EstimatedScaleOfCharacter = new Vector2()
+
+        //float offsetOfWord = zeUIText.text.Length * zeUIText.fontSize * 0.5f; // In order to make the words look centered to the character
+        float OffSetForCharacterY = (transform.localScale.y * 0.5f) + (characterSprite.sprite.textureRect.height * 0.5f);   // This isn't accurate. So need to convert again.
+        
+        //Debug.Log("Offset for position from y:" + OffSetForCharacterY + ".Name:" + gameObject.name);
+        Debug.Log("Size Of Sprite:" + characterSprite.sprite.textureRect.size + ".Name:" + gameObject.name);
+        zeCreatedLevelUI.transform.position = new Vector3(transform.position.x, transform.position.y + OffSetForCharacterY, transform.position.z); // Making the UI to display above the character
+        zeCreatedLevelUI.transform.parent = transform;      // Making the UI's transform parent to be this
     }
 	
     //void OnGUI()
