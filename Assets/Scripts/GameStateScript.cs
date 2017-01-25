@@ -35,6 +35,11 @@ public class GameStateScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha2))
             ChangeState(GAMESTATE.CHATTING);
         // TODO: This is just keyboard input so that i can change UI elements at will only!
+
+        if (Input.GetKeyUp(KeyCode.Escape) && Application.platform == RuntimePlatform.Android)  // Check whether the player has pressed the back button and is it on android phone!
+        {
+
+        }
     }
 
     static public void ChangeState(GAMESTATE zeState)   // Changing the state then turning on the UI elements in that state
