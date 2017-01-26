@@ -72,7 +72,12 @@ public class ButtonFeedbackScript : MonoBehaviour {
             Touch[] allTheTouch = Input.touches;
             foreach (Touch zeTouch in allTheTouch)  // Iterate through all the loops and find which finger is the 1 pressed on it!
             {
-                
+                if (zeTouch.position.x < theUITransform.position.x + (theUITransform.sizeDelta.x * 0.5f) && zeTouch.position.x > theUITransform.position.x - (theUITransform.sizeDelta.x * 0.5f)
+                        && zeTouch.position.y < theUITransform.position.y + (theUITransform.sizeDelta.y * 0.5f) && zeTouch.position.y > theUITransform.position.y - (theUITransform.sizeDelta.y * 0.5f))    // Check whether any of the touches are within the button
+                    {
+                        theFingerPressed = zeTouch; // Track down this finger!
+                        break;
+                    }
             }
         }
     }
