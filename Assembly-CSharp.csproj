@@ -60,16 +60,13 @@
      <Compile Include="Assets\Scripts\InvokeMessageScript.cs" />
      <Compile Include="Assets\Scripts\LevelUIScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-=======
      <Compile Include="Assets\Scripts\MenuButtonBehaviour.cs" />
      <Compile Include="Assets\Scripts\MessageSystem.cs" />
      <Compile Include="Assets\Scripts\MinimapScript.cs" />
      <Compile Include="Assets\Scripts\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
->>>>>>> ecd3673d603ac0292823ad52dff28a9003960579
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
