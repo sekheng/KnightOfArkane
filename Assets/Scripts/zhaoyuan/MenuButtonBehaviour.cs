@@ -4,11 +4,11 @@ using System.Collections;
 public class MenuButtonBehaviour : MonoBehaviour {
     private GameObject[] menuoptions;
     private ButtonMovenment btn_move;
-    public string scrollDir;
+    //public string scrollDir;
 	// Use this for initialization
 	void Start () {
         menuoptions = GameObject.FindGameObjectsWithTag("MenuButtons");
-        Debug.Log(menuoptions.Length);
+        //Debug.Log(menuoptions.Length);
 	}
 	
 	// Update is called once per frame
@@ -17,7 +17,7 @@ public class MenuButtonBehaviour : MonoBehaviour {
 	}
 
     public void pressUp()
-    {
+    {//logic is this->buttonmovenment->menuslot
         foreach(GameObject go in menuoptions)
         {
             go.BroadcastMessage("moveUP");
