@@ -21,7 +21,7 @@ public class MenuSlot : MonoBehaviour {
                 {
                     //selectedOption = GameObject.FindGameObjectWithTag("OptionsManager");
                     selectedOption.BroadcastMessage("showCorrectUI", go);
-                    Debug.Log(go);
+                    
                 }
             }
         }
@@ -50,5 +50,10 @@ public class MenuSlot : MonoBehaviour {
             //Debug.Log(button);
         }
         
+    }
+
+    public GameObject getSelectedOptions()
+    {
+        return selectedOption;
     }
 }

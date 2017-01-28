@@ -66,9 +66,11 @@
      <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
