@@ -119,7 +119,7 @@ public class ButtonFeedbackScript : MonoBehaviour {
 
     void showToast()
     {
-        Debug.Log("Trying to show Toast!");
+        //Debug.Log("Trying to show Toast!");
         if (theIntentedMessage != "")
         {
             AndroidJavaClass zeToastClass = new AndroidJavaClass("android.widget.Toast");    // Getting the toast widget from android!
@@ -151,7 +151,7 @@ public class ButtonFeedbackScript : MonoBehaviour {
             // TODO: Remove when not debuggin swipe
             swipeStartTime = Time.time; // Begin Tracking down the time!
             hasFingerPressedIt = true;
-            Debug.Log("Time Start:" + swipeStartTime);
+            //Debug.Log("Time Start:" + swipeStartTime);
         }
     }
     public void FingerLetGoOfButton()
