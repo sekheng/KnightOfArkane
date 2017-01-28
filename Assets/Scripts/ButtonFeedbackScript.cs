@@ -20,7 +20,8 @@ public class ButtonFeedbackScript : MonoBehaviour {
     private string theIntentedMessage;  // so that we can have multiple different messages displayed 
 
     // For gesture use Only!
-    private Touch theFingerPressed; // Need to keep track of the 1st finger that has pressed the button for the gesture movement
+    //private Touch theFingerPressed; // Need to keep track of the 1st finger that has pressed the button for the gesture movement
+    private int theFingerPressedID = 0;
     private RectTransform theUITransform;   // This is the UI transformation component!
     private bool hasFingerPressedIt = false;    // For gesture use only! Because waiting for event trigger will be too slow!
     private Vector2 initialFingerPos;   // For gesture use only! To get the initial position of the finger!
@@ -48,7 +49,29 @@ public class ButtonFeedbackScript : MonoBehaviour {
         if (hasFingerPressedIt) // Need to check whether the finger has pressed it through the button!
         {
             float currentTimeSinceStartSwipe = 0;
-            switch (theFingerPressed.phase)
+            // TODO: Remove when not debugging swipe
+            //if (Input.GetMouseButtonUp(0))
+            //{
+            //    currentTimeSinceStartSwipe = Time.time - swipeStartTime;// Checking the total time!
+            //    Vector2 theMouseNewPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            //    float zeDistance = (theMouseNewPosition - initialFingerPos).magnitude; // Get the distance between the button and finger
+            //    float theRequiredDistance = m_distance + (theUITransform.sizeDelta.x * 0.5f);   // We need to take the size of the button into account!
+            //    Debug.Log("Distance:" + zeDistance);
+            //    Debug.Log("Required Distance:" + theRequiredDistance);
+            //    Debug.Log("Current Time Swipe:" + currentTimeSinceStartSwipe);
+            //    if (currentTimeSinceStartSwipe > maxSwipeTime // Checking whether the finger has been moving for too long!
+            //        || zeDistance <= theRequiredDistance)   // Or it is not up to the required swiping distance.
+            //    {
+            //        Debug.Log("Pressed " + gameObject.name);
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("Swipe " + gameObject.name);
+            //    }
+            //    hasFingerPressedIt = false;
+            //}
+            // TODO: Remove when not debugging swipe
+            switch (Input.GetTouch(theFingerPressedID).phase)
             {
                 case TouchPhase.Stationary: // if it is stationary, then no swipe!
                     currentTimeSinceStartSwipe = Time.time - swipeStartTime;  // Checking the total time!
@@ -61,12 +84,8 @@ public class ButtonFeedbackScript : MonoBehaviour {
                     break;
                 case TouchPhase.Ended:
                     currentTimeSinceStartSwipe = Time.time - swipeStartTime;// Checking the total time!
-                    float zeDistance = (theFingerPressed.position - initialFingerPos).magnitude; // Get the distance between the button and finger
-                    float theRequiredDistance =  m_distance + (theUITransform.rect.width * 0.5f);   // We need to take the size of the button into account!
-                    // For debugging purpose only!
-                    //TextMesh zeDebugText = GameObject.Find("DebugMessage").GetComponent<TextMesh>();
-                    //zeDebugText.text = "SwipeTime:" + currentTimeSinceStartSwipe + "\n" + "Distance:" + zeDistance + "\n Required Distance:" + theRequiredDistance;
-                    // For debugging purpose only!
+                    float zeDistance = (Input.GetTouch(theFingerPressedID).position - initialFingerPos).magnitude; // Get the distance between the button and finger
+                    float theRequiredDistance = m_distance + (theUITransform.sizeDelta.x * 0.5f);   // We need to take the size of the button into account!
                     if (currentTimeSinceStartSwipe > maxSwipeTime // Checking whether the finger has been moving for too long!
                         || zeDistance <= theRequiredDistance)   // Or it is not up to the required swiping distance.
                     {
@@ -77,7 +96,7 @@ public class ButtonFeedbackScript : MonoBehaviour {
                         theIntentedMessage = theGestureToastMessage;
                     }
                     showToastOnGUI();
-                    hasFingerPressedIt = false;                   
+                    hasFingerPressedIt = false;
                     break;
                 case TouchPhase.Began:
                     break;
@@ -112,7 +131,7 @@ public class ButtonFeedbackScript : MonoBehaviour {
 
     public void PressedFingerOnButton() // For gestures
     {
-        if (m_distance > Mathf.Epsilon) // If the distance is already less than equals to 0. dont bother about it!
+        if (m_distance > Mathf.Epsilon && !hasFingerPressedIt) // If the distance is already less than equals to 0. dont bother about it! and if this function has been called before!
         {
             // First need to know the exact distance!
             Touch[] allTheTouch = Input.touches;
@@ -121,34 +140,41 @@ public class ButtonFeedbackScript : MonoBehaviour {
                 if (zeTouch.position.x < theUITransform.position.x + (theUITransform.sizeDelta.x * 0.5f) && zeTouch.position.x > theUITransform.position.x - (theUITransform.sizeDelta.x * 0.5f)
                         && zeTouch.position.y < theUITransform.position.y + (theUITransform.sizeDelta.y * 0.5f) && zeTouch.position.y > theUITransform.position.y - (theUITransform.sizeDelta.y * 0.5f))    // Check whether any of the touches are within the button
                     {
-                        theFingerPressed = zeTouch; // Track down this finger!
-                        initialFingerPos = new Vector2(theFingerPressed.position.x, theFingerPressed.position.y);
-                        swipeStartTime = Time.time; // Begin Tracking down the time!
+                        //theFingerPressed = zeTouch; // Track down this finger!
+                        theFingerPressedID = zeTouch.fingerId;
+                        initialFingerPos = new Vector2(zeTouch.position.x, zeTouch.position.y);
                         break;
                     }
             }
+            // TODO: Remove when not debuggin swipe
+            //initialFingerPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            // TODO: Remove when not debuggin swipe
+            swipeStartTime = Time.time; // Begin Tracking down the time!
             hasFingerPressedIt = true;
+            Debug.Log("Time Start:" + swipeStartTime);
         }
     }
     public void FingerLetGoOfButton()
     {
-        if (m_distance > Mathf.Epsilon) // If the distance is already less than equals to 0. dont bother about it!
-        {
-            // Then we need to measure the distance and see if it is appropriate! And taking account of the width and height of the button
-            Vector2 zeUIPos2D = new Vector2(theUITransform.position.x, theUITransform.position.y);
-            float zeDistanceSqr = (theFingerPressed.position - zeUIPos2D).sqrMagnitude; // Get the distance between the button and finger
-            float theRequiredDistanceSqr = (m_distance * m_distance) + theUITransform.sizeDelta.magnitude;   // We need to take the size of the button into account!
-            //Debug.Log("Distance between Button and Finger:" + zeDistanceSqr);
-            //Debug.Log("The Required Distance:" + theRequiredDistanceSqr);
-            if (zeDistanceSqr >= theRequiredDistanceSqr)   // If the distance happens to be more than or equals to what we wanted, the message shall be the gesture message
-            {
-                theIntentedMessage = theGestureToastMessage;
-            }
-            else
-            {   // If the swipping distance isn't ideal, then we will use the Pointer Click Message!
-                theIntentedMessage = theToastBoxMessage;
-            }
-            showToastOnGUI();
-        }
+        //if (m_distance > Mathf.Epsilon) // If the distance is already less than equals to 0. dont bother about it!
+        //{
+        //    // Then we need to measure the distance and see if it is appropriate! And taking account of the width and height of the button
+        //    float currentTimeSinceStartSwipe = Time.time - swipeStartTime;  // Checking the total time!
+        //    Vector2 zeUIPos2D = new Vector2(theUITransform.position.x, theUITransform.position.y);
+        //    float zeDistanceSqr = (theFingerPressed.position - zeUIPos2D).sqrMagnitude; // Get the distance between the button and finger
+        //    float theRequiredDistanceSqr = (m_distance * m_distance) + theUITransform.sizeDelta.magnitude;   // We need to take the size of the button into account!
+        //    //Debug.Log("Distance between Button and Finger:" + zeDistanceSqr);
+        //    //Debug.Log("The Required Distance:" + theRequiredDistanceSqr);
+        //    if (zeDistanceSqr >= theRequiredDistanceSqr && currentTimeSinceStartSwipe < maxSwipeTime)   // If the distance happens to be more than or equals to what we wanted, the message shall be the gesture message
+        //    {
+        //        theIntentedMessage = theGestureToastMessage;
+        //    }
+        //    else
+        //    {   // If the swipping distance isn't ideal, then we will use the Pointer Click Message!
+        //        theIntentedMessage = theToastBoxMessage;
+        //    }
+        //    showToastOnGUI();
+        //    hasFingerPressedIt = false;
+        //}
     }
 }
