@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ButtonFeedbackScript.cs" />
-     <Compile Include="Assets\Scripts\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\CoinUIScript.cs" />
      <Compile Include="Assets\Scripts\DPadBehaviour.cs" />
      <Compile Include="Assets\Scripts\DPadButtonScript.cs" />
@@ -61,12 +60,15 @@
      <Compile Include="Assets\Scripts\LevelUIScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\MenuButtonBehaviour.cs" />
      <Compile Include="Assets\Scripts\MessageSystem.cs" />
      <Compile Include="Assets\Scripts\MinimapScript.cs" />
      <Compile Include="Assets\Scripts\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
