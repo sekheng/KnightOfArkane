@@ -27,6 +27,7 @@ public class NPCInteractScript : MonoBehaviour {
         if (otherCollider.gameObject.CompareTag("Player"))  // Check whether is it the player
         {
             canInteractWithPlayer = true;
+            //Debug.Log("Player can Interact");
         }
     }
 
@@ -36,13 +37,16 @@ public class NPCInteractScript : MonoBehaviour {
         {
             // Player leaves it's interaction zone, then can't interact anymore!
             canInteractWithPlayer = false;
+            //Debug.Log("Player cannot Interact");
         }
     }
 
     void InteractWithNPC()
     {
+        //Debug.Log("Pressed A");
         if (canInteractWithPlayer)
         {
+            //Debug.Log("Interacting With Player");
             // Not only do we have to change the state, we have to change the chat text box!
             GameStateScript.ChangeState(GameStateScript.GAMESTATE.CHATTING);
             GameObject[] AllChatUI = GameObject.FindGameObjectsWithTag("ChattingUI");
