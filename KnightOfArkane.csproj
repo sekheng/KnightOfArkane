@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
+    <Compile Include="Assets\Scripts\zhaoyuan\slotstuff.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
