@@ -58,17 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AutoScrollingScript.cs" />
     <Compile Include="Assets\Scripts\ButtonFeedbackScript.cs" />
     <Compile Include="Assets\Scripts\CoinUIScript.cs" />
     <Compile Include="Assets\Scripts\DPadBehaviour.cs" />
@@ -90,9 +85,12 @@
     <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
     <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
+    <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
+    <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
+    <Compile Include="Assets\Scripts\zhaoyuan\slotstuff.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -2,16 +2,12 @@
 using System.Collections;
 
 public class ButtonMovenment : MonoBehaviour {
-    private RectTransform btn_rt;
     public int buttonNumber;
     public string buttonName;
-    private GameObject go;
     private GameObject[] slots;
     private GameObject[] choices;
     // Use this for initialization
     void Start () {
-        btn_rt = GetComponent<RectTransform>();
-        go = GetComponent<ButtonMovenment>().gameObject;
         slots = GameObject.FindGameObjectsWithTag("MenuSlot");
         choices = GameObject.FindGameObjectsWithTag("MenuButtons");
     }

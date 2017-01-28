@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour {
     [Tooltip("This is to set the maximum health of the player only!")]
@@ -38,6 +39,8 @@ public class HealthScript : MonoBehaviour {
         {
             health_ = 0;
             whatToReturn = false;
+            // We will just do a quick fix here! Just switch to lose scene the moment your health drops to 0!
+            SceneManager.LoadScene("LoseScene");
         }
         else if (health_ >= max_health_)
             health_ = max_health_;
