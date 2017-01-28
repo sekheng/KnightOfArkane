@@ -13,6 +13,6 @@ public class MainMenu : MonoBehaviour {
 
 	public void ClickStart()
 	{
-		Application.LoadLevel("LoseScene");
+		//Application.LoadLevel("LoseScene");
 	}
 }
