@@ -52,19 +52,19 @@ public class DPadBehaviour : MonoBehaviour {
         }
 
         // TODO: This is for mouse Input only!
-        RectTransform[] zeChildren = GetComponentsInChildren<RectTransform>();
-        foreach (RectTransform eachMoveButton in zeChildren)
-        {
-            // First part will be checking whether the finger's X position is inside the X-boundary of the buttons
-            // Second part is checking whether the finger's Y position is inside the Y-boundary of the buttons
-            if (Input.mousePosition.x < eachMoveButton.position.x + (eachMoveButton.rect.width * 0.25f) && Input.mousePosition.x > eachMoveButton.position.x - (eachMoveButton.rect.width * 0.25f)
-                && Input.mousePosition.y < eachMoveButton.position.y + (eachMoveButton.rect.height * 0.25f) && Input.mousePosition.y > eachMoveButton.position.y - (eachMoveButton.rect.height * 0.25f))    // Check whether any of the touches are within the button
-            {
-                playerHasPressedTheButton = true;
-                eachMoveButton.gameObject.BroadcastMessage("MovePlayer");
-                break;
-            }
-        }
+        //RectTransform[] zeChildren = GetComponentsInChildren<RectTransform>();
+        //foreach (RectTransform eachMoveButton in zeChildren)
+        //{
+        //    // First part will be checking whether the finger's X position is inside the X-boundary of the buttons
+        //    // Second part is checking whether the finger's Y position is inside the Y-boundary of the buttons
+        //    if (Input.mousePosition.x < eachMoveButton.position.x + (eachMoveButton.rect.width * 0.25f) && Input.mousePosition.x > eachMoveButton.position.x - (eachMoveButton.rect.width * 0.25f)
+        //        && Input.mousePosition.y < eachMoveButton.position.y + (eachMoveButton.rect.height * 0.25f) && Input.mousePosition.y > eachMoveButton.position.y - (eachMoveButton.rect.height * 0.25f))    // Check whether any of the touches are within the button
+        //    {
+        //        playerHasPressedTheButton = true;
+        //        eachMoveButton.gameObject.BroadcastMessage("MovePlayer");
+        //        break;
+        //    }
+        //}
         // TODO: This is for mouse Input only!
     }
 
