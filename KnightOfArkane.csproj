@@ -95,7 +95,7 @@
     <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
-    <Compile Include="Assets\Scripts\zhaoyuan\StstChanger.cs" />
+    <Compile Include="Assets\Scripts\zhaoyuan\StatChanger.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\character.cs" />
     <Compile Include="Assets\Scripts\zhaoyuan\itemInformation.cs" />

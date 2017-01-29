@@ -89,4 +89,9 @@ public class OptionsManager : MonoBehaviour {
         changeUIBasedOnSelectedSlot();
         
     }
+
+    public string getMenuSelectedOption()
+    {
+        return selectedOption;
+    }
 }

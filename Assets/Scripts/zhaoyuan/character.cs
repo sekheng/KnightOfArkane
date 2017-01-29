@@ -9,8 +9,11 @@ public class character : MonoBehaviour {
     public int defend_stat;
     public int speed_stat;
     public int stat_points;
-    public int stat_points_used;
+    public int stat_points_used_att;
+    public int stat_points_used_def;
+    public int stat_points_used_spd;
     public Text[] display_stats;
+    public StatChanger statChanger;
     private int equip_att;
     private int equip_def;
     private int equip_spd;
@@ -27,11 +30,14 @@ public class character : MonoBehaviour {
         temp_att= 0;
         temp_def= 0;
         temp_spd = 0;
-        stat_points_used = 0;
+        stat_points_used_att = 0;
+        stat_points_used_def = 0;
+        stat_points_used_spd = 0;
         attack_stat += equip_att;
         defend_stat += equip_def;
         speed_stat += equip_spd;
         updateStatDisplay();
+        statChanger.showPreviewStatTextForAftCfm();
     }
 	
     public void updateStatDisplay()
@@ -46,7 +52,7 @@ public class character : MonoBehaviour {
         {
             temp.text = str.ToString();
         }
-        
+        statChanger.showPreviewStatTextForAftCfm();
     }
 
     public void updateStatFromString(string str)
@@ -69,7 +75,7 @@ public class character : MonoBehaviour {
         defend_stat += equip_def;
         speed_stat += equip_spd;
         updateStatDisplay();
-
+        statChanger.showPreviewStatTextForAftCfm();
     }
 	
     public void removeItem(string str)
@@ -89,6 +95,7 @@ public class character : MonoBehaviour {
         defend_stat -= equip_def;
         speed_stat -= equip_spd;
         updateStatDisplay();
+        statChanger.showPreviewStatTextForAftCfm();
     }
 
     public int getAttStat()

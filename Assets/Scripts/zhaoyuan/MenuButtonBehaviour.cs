@@ -4,6 +4,7 @@ using System.Collections;
 public class MenuButtonBehaviour : MonoBehaviour {
     private GameObject[] menuoptions;
     private ButtonMovenment btn_move;
+    public StatChanger sceneIsChanged;
     //public string scrollDir;
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,10 @@ public class MenuButtonBehaviour : MonoBehaviour {
         {
             go.BroadcastMessage("moveUP");
         }
+        if(sceneIsChanged != null)
+        {
+            sceneIsChanged.resetStatPointUses();
+        }
     }
 
     public void pressDown()
@@ -25,6 +30,10 @@ public class MenuButtonBehaviour : MonoBehaviour {
         foreach (GameObject go in menuoptions)
         {
             go.BroadcastMessage("moveDown");
+        }
+        if (sceneIsChanged != null)
+        {
+            sceneIsChanged.resetStatPointUses();
         }
     }
 
