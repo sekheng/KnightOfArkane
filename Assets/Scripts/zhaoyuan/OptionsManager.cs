@@ -70,7 +70,16 @@ public class OptionsManager : MonoBehaviour {
             selectedOption = "Stats";
             
         }
-        
+        else if (nameOftheOption == "menu_sell")
+        {
+            selectedOption = "Sell";
+
+        }
+        else if (nameOftheOption == "menu_buy")
+        {
+            selectedOption = "Buy";
+
+        }
 
         changeUIBasedOnSelectedSlot();
         

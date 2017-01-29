@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 using System;
 
 public class slotstuff : MonoBehaviour, IDropHandler {
+    public string slot_type;
+    public int slot_number;
     public GameObject item
     {
         get
@@ -18,11 +20,15 @@ public class slotstuff : MonoBehaviour, IDropHandler {
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(!item)//only accept the item if the slot isnt holding to any
+        if(!item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type))//only accept the item if the slot isnt holding to any
         {
             DragHandler.itemBeingDragged.transform.SetParent(transform);
             DragHandler.itemBeingDragged.transform.localPosition = Vector3.zero;
-            DragHandler.itemBeingDragged.transform.localScale = transform.localScale;
+        }
+        else if(item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
+            && item.GetComponent<itemInformation>().item_name == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_name)
+        {
+
         }
     }
 }
