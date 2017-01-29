@@ -6,7 +6,7 @@ using System;
 public class slotstuff : MonoBehaviour, IDropHandler {
     public string slot_type;
     public int slot_number;
-    public character player;
+    public character player = null;
     public GameObject item
     {
         get
@@ -21,15 +21,18 @@ public class slotstuff : MonoBehaviour, IDropHandler {
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(!item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type))//only accept the item if the slot isnt holding to any
+        if (DragHandler.itemBeingDragged != null)//make sure 
         {
-            DragHandler.itemBeingDragged.transform.SetParent(transform);
-            DragHandler.itemBeingDragged.transform.localPosition = Vector3.zero;
-            if (player != null)
+            if (!item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type))//only accept the item if the slot isnt holding to any
             {
-                if (slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
+                DragHandler.itemBeingDragged.transform.SetParent(transform);
+                DragHandler.itemBeingDragged.transform.localPosition = Vector3.zero;
+                if (player != null)
                 {
-                    player.BroadcastMessage("updateStatFromString", DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_effect);
+                    if (slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
+                    {
+                        player.BroadcastMessage("updateStatFromString", DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_effect);
+                    }
                 }
             }
         }
