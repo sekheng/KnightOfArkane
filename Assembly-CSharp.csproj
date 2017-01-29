@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\SekHeng\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ResourceUIScript.cs" />
+     <Compile Include="Assets\Scripts\SekHeng\UpdateItemCountScript.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DoubleTapHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
