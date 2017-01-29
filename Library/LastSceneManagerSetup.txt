@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/AllScenes/TristanScene.unity
+- path: Assets/AllScenes/ShopScene.unity
   isLoaded: 1
   isActive: 1
