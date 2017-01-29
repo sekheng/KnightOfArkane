@@ -5,6 +5,7 @@ using System.Collections;
 /// What it will do is sending a message to the toastbox to display it
 /// Will add sound effects and music soon!
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class ButtonFeedbackScript : MonoBehaviour {
     [Tooltip("The string that you want to display for your toastbox when click once!")]
     public string theToastBoxMessage = "";
