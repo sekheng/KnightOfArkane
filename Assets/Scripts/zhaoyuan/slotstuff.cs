@@ -25,10 +25,10 @@ public class slotstuff : MonoBehaviour, IDropHandler {
             DragHandler.itemBeingDragged.transform.SetParent(transform);
             DragHandler.itemBeingDragged.transform.localPosition = Vector3.zero;
         }
-        else if(item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
-            && item.GetComponent<itemInformation>().item_name == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_name)
-        {
+        //else if(item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
+        //    && item.GetComponent<itemInformation>().item_name == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_name)
+        //{
 
-        }
+        //}//doing the item overlap, this is good to have i guess so i will be doing the other features first.
     }
 }

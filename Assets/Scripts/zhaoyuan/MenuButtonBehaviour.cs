@@ -11,10 +11,6 @@ public class MenuButtonBehaviour : MonoBehaviour {
         //Debug.Log(menuoptions.Length);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void pressUp()
     {//logic is this->buttonmovenment->menuslot
@@ -32,13 +28,5 @@ public class MenuButtonBehaviour : MonoBehaviour {
         }
     }
 
-    //void moveUP()
-    //{
-
-    //}
-
-    //void moveDown()
-    //{
-
-    //}
+   
 }
