@@ -22,6 +22,7 @@ public class ButtonFeedbackScript : MonoBehaviour {
     private static AndroidJavaObject currentActivity, currentContext;
     private static AndroidJavaClass unityPlayer;
     private string theIntentedMessage;  // so that we can have multiple different messages displayed
+    private AudioSource theAudioPlayer; // In order to play music!
 
     // For gesture use Only!
     //private Touch theFingerPressed; //For debugging purpose only!
@@ -38,6 +39,8 @@ public class ButtonFeedbackScript : MonoBehaviour {
     {
         theIntentedMessage = theToastBoxMessage;    // The first message will definitely be the click message!
         theUITransform = GetComponent<RectTransform>();
+        theAudioPlayer = GetComponent<AudioSource>();
+        theAudioPlayer.volume = 1.0f;
 #if UNITY_ANDROID
         if (Application.platform == RuntimePlatform.Android)    // Checking is it running on android phone!
         {
@@ -64,13 +67,15 @@ public class ButtonFeedbackScript : MonoBehaviour {
             //    Debug.Log("Required Distance:" + theRequiredDistance);
             //    Debug.Log("Current Time Swipe:" + currentTimeSinceStartSwipe);
             //    if (currentTimeSinceStartSwipe > maxSwipeTime // Checking whether the finger has been moving for too long!
-            //        || zeDistance <= theRequiredDistance)   // Or it is not up to the required swiping distance.
+            //        || (m_distance > Mathf.Epsilon && zeDistance <= theRequiredDistance))   // Or it is not up to the required swiping distance.
             //    {
             //        Debug.Log("Pressed " + gameObject.name);
+            //        theAudioPlayer.PlayOneShot(thePressedSoundEffect);
             //    }
             //    else
             //    {
             //        Debug.Log("Swipe " + gameObject.name);
+            //        theAudioPlayer.PlayOneShot(theGestureSoundEffect);
             //    }
             //    hasFingerPressedIt = false;
             //}
@@ -129,11 +134,11 @@ public class ButtonFeedbackScript : MonoBehaviour {
             // We will have to put the logics for sound effects here
             if (theIntentedMessage == theToastBoxMessage)   // We will check which message is suitable for which sound effects!
             {
-
+                theAudioPlayer.PlayOneShot(thePressedSoundEffect);
             }
             else if (theIntentedMessage == theGestureToastMessage)
             {
-
+                theAudioPlayer.PlayOneShot(theGestureSoundEffect);
             }
             AndroidJavaClass zeToastClass = new AndroidJavaClass("android.widget.Toast");    // Getting the toast widget from android!
             AndroidJavaObject zeJavaString = new AndroidJavaObject("java.lang.String", theIntentedMessage);   // Having a Java String Class!
