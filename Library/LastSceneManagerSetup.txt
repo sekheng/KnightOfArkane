@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/AllScenes/ShopScene.unity
+- path: Assets/AllScenes/ZhaoyuanScene.unity
   isLoaded: 1
   isActive: 1
