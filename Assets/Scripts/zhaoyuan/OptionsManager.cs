@@ -19,6 +19,11 @@ public class OptionsManager : MonoBehaviour {
 
     void changeUIBasedOnSelectedSlot()
     {
+        if(differentOptionsUIName == null)
+        {
+            ui = GameObject.FindGameObjectWithTag("GameplayUI");
+            differentOptionsUIName = ui.GetComponentsInChildren<RectTransform>(true);
+        }
         foreach (RectTransform rt in differentOptionsUIName)
         {
             bool toSetActive = false;
@@ -27,12 +32,12 @@ public class OptionsManager : MonoBehaviour {
                 if(rt.gameObject.transform.name == temp)
                 {
                     toSetActive = true;
+                    //Debug.Log(rt.gameObject.transform.name);
                 }
             }
             if (toSetActive)
             {
 
-                Debug.Log(rt.gameObject.transform.name);
                 if (rt.gameObject.transform.name == selectedOption || rt.gameObject.transform.name == "UI")
                 {
                     rt.gameObject.SetActive(true);
@@ -70,7 +75,16 @@ public class OptionsManager : MonoBehaviour {
             selectedOption = "Stats";
             
         }
-        
+        else if (nameOftheOption == "menu_sell")
+        {
+            selectedOption = "Sell";
+
+        }
+        else if (nameOftheOption == "menu_buy")
+        {
+            selectedOption = "Buy";
+
+        }
 
         changeUIBasedOnSelectedSlot();
         

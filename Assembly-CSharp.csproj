@@ -72,6 +72,11 @@
      <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
+<<<<<<< HEAD
+=======
+     <Compile Include="Assets\Scripts\zhaoyuan\itemInformation.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\slotHolderInfo.cs" />
+>>>>>>> cf985102856401dae92d179adad873557087aaa9
      <Compile Include="Assets\Scripts\zhaoyuan\slotstuff.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
