@@ -9,6 +9,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     Vector3 startPosition;//starting pos to put the opject back if failed to locate slot
     Transform startParent;
     private Transform theCanvas;
+    public character player;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         transform.SetParent(theCanvas);
         transform.SetAsLastSibling();
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //Debug.Log(Time.deltaTime);
         //Debug.Log(GameObject.FindGameObjectWithTag("Canvas").gameObject);
         //throw new NotImplementedException();
     }
@@ -54,6 +56,14 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             transform.SetParent(startParent);
         }
 
+        if(transform.parent != startParent && player != null)
+        {
+            if(startParent.GetComponent<slotstuff>().slot_type != "Inventory")
+            {
+                player.BroadcastMessage("removeItem", gameObject.GetComponent<itemInformation>().item_effect);
+            }
+
+        }
         //GameObject temp;
         //foreach(GameObject go in allSlots)
         //{
