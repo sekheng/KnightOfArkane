@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/AllScenes/LoseScene.unity
+- path: Assets/AllScenes/TristanScene.unity
   isLoaded: 1
   isActive: 1
