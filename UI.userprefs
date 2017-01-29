@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tristan\MainMenu.cs">
     <Files>
-      <File FileName="Assets\Scripts\MainMenu.cs" Line="22" Column="30" />
-      <File FileName="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" Line="8" Column="32" />
       <File FileName="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\zhaoyuan\MenuSlot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\zhaoyuan\OptionsManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\zhaoyuan\OptionsManager.cs" Line="91" Column="6" />
+      <File FileName="Assets\Scripts\Tristan\MainMenu.cs" Line="50" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

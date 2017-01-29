@@ -60,23 +60,21 @@
      <Compile Include="Assets\Scripts\InvokeMessageScript.cs" />
      <Compile Include="Assets\Scripts\LevelUIScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MessageSystem.cs" />
      <Compile Include="Assets\Scripts\MinimapScript.cs" />
      <Compile Include="Assets\Scripts\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
+     <Compile Include="Assets\Scripts\Tristan\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Tristan\Options.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
-<<<<<<< HEAD
-=======
      <Compile Include="Assets\Scripts\zhaoyuan\itemInformation.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\slotHolderInfo.cs" />
->>>>>>> cf985102856401dae92d179adad873557087aaa9
      <Compile Include="Assets\Scripts\zhaoyuan\slotstuff.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
