@@ -6,6 +6,10 @@ public class MainMenu : MonoBehaviour {
 	//public GameObject DataPanel;
 	public Canvas DataPanel2;
 	public bool DataOpen;
+
+	public Canvas OptionsPanel;
+	public bool OptionOpen;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -24,9 +28,20 @@ public class MainMenu : MonoBehaviour {
 
 	public void ClickOptions()
 	{
-		Application.LoadLevel("ZhaoyuanScene");
+		if (OptionOpen == false) 
+		{
+			OptionOpen = true;
+			OptionsPanel.enabled = true;
+		}
 	}
-
+	public void ClickCloseOptions()
+	{
+		if (OptionOpen == true) 
+		{
+			OptionOpen = false;
+			OptionsPanel.enabled = false;
+		}
+	}
 	public void ClickData()
 	{
 		if (DataOpen == false) 

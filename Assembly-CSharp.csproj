@@ -45,15 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\SekHeng\AutoScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ButtonFeedbackScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\CoinUIScript.cs" />
+     <Compile Include="Assets\Scripts\SekHeng\CostScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\DPadBehaviour.cs" />
      <Compile Include="Assets\Scripts\SekHeng\DPadButtonScript.cs" />
+     <Compile Include="Assets\Scripts\SekHeng\DisplayImageScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\FollowHeroScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\GameStateScript.cs" />
+     <Compile Include="Assets\Scripts\SekHeng\GetCostAndQuantityScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\HealthScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\HealthUIScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\HeroResourcesScript.cs" />
@@ -66,6 +68,9 @@
      <Compile Include="Assets\Scripts\SekHeng\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ResourceUIScript.cs" />
+     <Compile Include="Assets\Scripts\SekHeng\UpdateItemCountScript.cs" />
+     <Compile Include="Assets\Scripts\Tristan\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Tristan\Options.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DoubleTapHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
