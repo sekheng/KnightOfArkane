@@ -8,19 +8,23 @@ using System.Collections;
 public class ButtonFeedbackScript : MonoBehaviour {
     [Tooltip("The string that you want to display for your toastbox when click once!")]
     public string theToastBoxMessage = "";
+    [Tooltip("The sound effect to play when button pressed!")]
+    public AudioClip thePressedSoundEffect;
 
     [Tooltip("To Allow gestures, you will need to specify the string name")]
     public string theGestureToastMessage = "";
     [Tooltip("Adjust the distance of how far the finger should move to activate the gesture message!")]
     public float m_distance = 0;
+    [Tooltip("The sound effect whenever there is a gesture if you have adjust the values at the top")]
+    public AudioClip theGestureSoundEffect;
 
     // Similar to the stuff on android studio
     private static AndroidJavaObject currentActivity, currentContext;
     private static AndroidJavaClass unityPlayer;
-    private string theIntentedMessage;  // so that we can have multiple different messages displayed 
+    private string theIntentedMessage;  // so that we can have multiple different messages displayed
 
     // For gesture use Only!
-    //private Touch theFingerPressed; // Need to keep track of the 1st finger that has pressed the button for the gesture movement
+    //private Touch theFingerPressed; //For debugging purpose only!
     private int theFingerPressedID = 0;
     private RectTransform theUITransform;   // This is the UI transformation component!
     private bool hasFingerPressedIt = false;    // For gesture use only! Because waiting for event trigger will be too slow!
@@ -122,6 +126,15 @@ public class ButtonFeedbackScript : MonoBehaviour {
         //Debug.Log("Trying to show Toast!");
         if (theIntentedMessage != "")
         {
+            // We will have to put the logics for sound effects here
+            if (theIntentedMessage == theToastBoxMessage)   // We will check which message is suitable for which sound effects!
+            {
+
+            }
+            else if (theIntentedMessage == theGestureToastMessage)
+            {
+
+            }
             AndroidJavaClass zeToastClass = new AndroidJavaClass("android.widget.Toast");    // Getting the toast widget from android!
             AndroidJavaObject zeJavaString = new AndroidJavaObject("java.lang.String", theIntentedMessage);   // Having a Java String Class!
             AndroidJavaObject zeToast = zeToastClass.CallStatic<AndroidJavaObject>("makeText", currentContext, zeJavaString, zeToastClass.GetStatic<int>("LENGTH_SHORT"));
@@ -140,8 +153,7 @@ public class ButtonFeedbackScript : MonoBehaviour {
                 if (zeTouch.position.x < theUITransform.position.x + (theUITransform.sizeDelta.x * 0.5f) && zeTouch.position.x > theUITransform.position.x - (theUITransform.sizeDelta.x * 0.5f)
                         && zeTouch.position.y < theUITransform.position.y + (theUITransform.sizeDelta.y * 0.5f) && zeTouch.position.y > theUITransform.position.y - (theUITransform.sizeDelta.y * 0.5f))    // Check whether any of the touches are within the button
                     {
-                        //theFingerPressed = zeTouch; // Track down this finger!
-                        theFingerPressedID = zeTouch.fingerId;
+                        theFingerPressedID = zeTouch.fingerId;  // Track down this finger!
                         initialFingerPos = new Vector2(zeTouch.position.x, zeTouch.position.y);
                         break;
                     }
@@ -153,28 +165,5 @@ public class ButtonFeedbackScript : MonoBehaviour {
             hasFingerPressedIt = true;
             //Debug.Log("Time Start:" + swipeStartTime);
         }
-    }
-    public void FingerLetGoOfButton()
-    {
-        //if (m_distance > Mathf.Epsilon) // If the distance is already less than equals to 0. dont bother about it!
-        //{
-        //    // Then we need to measure the distance and see if it is appropriate! And taking account of the width and height of the button
-        //    float currentTimeSinceStartSwipe = Time.time - swipeStartTime;  // Checking the total time!
-        //    Vector2 zeUIPos2D = new Vector2(theUITransform.position.x, theUITransform.position.y);
-        //    float zeDistanceSqr = (theFingerPressed.position - zeUIPos2D).sqrMagnitude; // Get the distance between the button and finger
-        //    float theRequiredDistanceSqr = (m_distance * m_distance) + theUITransform.sizeDelta.magnitude;   // We need to take the size of the button into account!
-        //    //Debug.Log("Distance between Button and Finger:" + zeDistanceSqr);
-        //    //Debug.Log("The Required Distance:" + theRequiredDistanceSqr);
-        //    if (zeDistanceSqr >= theRequiredDistanceSqr && currentTimeSinceStartSwipe < maxSwipeTime)   // If the distance happens to be more than or equals to what we wanted, the message shall be the gesture message
-        //    {
-        //        theIntentedMessage = theGestureToastMessage;
-        //    }
-        //    else
-        //    {   // If the swipping distance isn't ideal, then we will use the Pointer Click Message!
-        //        theIntentedMessage = theToastBoxMessage;
-        //    }
-        //    showToastOnGUI();
-        //    hasFingerPressedIt = false;
-        //}
     }
 }
