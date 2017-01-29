@@ -6,6 +6,7 @@ using System;
 public class slotstuff : MonoBehaviour, IDropHandler {
     public string slot_type;
     public int slot_number;
+    public character player;
     public GameObject item
     {
         get
@@ -24,7 +25,15 @@ public class slotstuff : MonoBehaviour, IDropHandler {
         {
             DragHandler.itemBeingDragged.transform.SetParent(transform);
             DragHandler.itemBeingDragged.transform.localPosition = Vector3.zero;
+            if (player != null)
+            {
+                if (slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
+                {
+                    player.BroadcastMessage("updateStatFromString", DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_effect);
+                }
+            }
         }
+        return;
         //else if(item && (slot_type == "Inventory" || slot_type == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_type)
         //    && item.GetComponent<itemInformation>().item_name == DragHandler.itemBeingDragged.GetComponent<itemInformation>().item_name)
         //{
