@@ -12,6 +12,15 @@ public class GetCostAndQuantityScript : MonoBehaviour {
     private int m_count = 0;
     private Text ownText;   // To change the text!
 
+    public int GetCostPerProduct()
+    {
+        return theCostPerProduct;
+    }
+    public int GetCount()
+    {
+        return m_count;
+    }
+
     void Start()
     {
         ownText = GetComponentInChildren<Text>();
