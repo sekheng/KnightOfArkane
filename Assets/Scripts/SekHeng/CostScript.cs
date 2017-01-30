@@ -24,7 +24,8 @@ public class CostScript : MonoBehaviour {
     {
         //Debug.Log("Sending Cost and Stuff");
         calculateCostAndValue.BroadcastMessage("SetCost", m_cost);
-        calculateCostAndValue.BroadcastMessage("setMaxProducts", ownItemStuff.item_count);
+        //calculateCostAndValue.BroadcastMessage("setMaxProducts", ownItemStuff.item_count);
+        calculateCostAndValue.BroadcastMessage("setItemInformation", ownItemStuff);
         calculateCostAndValue.BroadcastMessage("UpdateDisplay");
     }
 }

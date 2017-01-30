@@ -133,14 +133,14 @@ public class ButtonFeedbackScript : MonoBehaviour {
         if (theIntentedMessage != "")
         {
             // We will have to put the logics for sound effects here
-            if (theIntentedMessage == theToastBoxMessage)   // We will check which message is suitable for which sound effects!
-            {
-                theAudioPlayer.PlayOneShot(thePressedSoundEffect);
-            }
-            else if (theIntentedMessage == theGestureToastMessage)
-            {
-                theAudioPlayer.PlayOneShot(theGestureSoundEffect);
-            }
+            //if (theIntentedMessage == theToastBoxMessage)   // We will check which message is suitable for which sound effects!
+            //{
+            //    theAudioPlayer.PlayOneShot(thePressedSoundEffect);
+            //}
+            //else if (theIntentedMessage == theGestureToastMessage)
+            //{
+            //    theAudioPlayer.PlayOneShot(theGestureSoundEffect);
+            //}
             AndroidJavaClass zeToastClass = new AndroidJavaClass("android.widget.Toast");    // Getting the toast widget from android!
             AndroidJavaObject zeJavaString = new AndroidJavaObject("java.lang.String", theIntentedMessage);   // Having a Java String Class!
             AndroidJavaObject zeToast = zeToastClass.CallStatic<AndroidJavaObject>("makeText", currentContext, zeJavaString, zeToastClass.GetStatic<int>("LENGTH_SHORT"));
