@@ -74,11 +74,11 @@
      <Compile Include="Assets\Scripts\Tristan\Options.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\CustomDialog.cs" />
-     <Compile Include="Assets\Scripts\zhaoyuan\DoubleTapHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\QuitButton.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\StatChanger.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\character.cs" />
