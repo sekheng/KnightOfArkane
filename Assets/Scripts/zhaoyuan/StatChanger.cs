@@ -7,6 +7,8 @@ public class StatChanger : MonoBehaviour {
 
     public character player;
     public Text text, textForAllocationPoints;
+    public Button button;
+    public CustomDialog customDialog;
 
 
     public void addAttStat()
@@ -120,10 +122,21 @@ public class StatChanger : MonoBehaviour {
         player.updateStatDisplay();
         showPreviewStatTextForAftCfm();
     }
+
+    public void functionToOpenDialogOnlyWhenAStatPointIsUsed()
+    {
+        if(player.stat_points_used_att != 0
+        || player.stat_points_used_def != 0
+        || player.stat_points_used_spd != 0)
+        {
+            customDialog.startDialog();
+        }
+    }
+
     // Use this for initialization
     void Start () {
-
-        
+        button = GetComponent<Button>();
+        button.onClick.AddListener(functionToOpenDialogOnlyWhenAStatPointIsUsed);
     }
 	
 	
