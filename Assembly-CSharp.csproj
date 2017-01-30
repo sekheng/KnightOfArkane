@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\SekHeng\ActivateDialogScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\AutoScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ButtonFeedbackScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\CoinUIScript.cs" />
