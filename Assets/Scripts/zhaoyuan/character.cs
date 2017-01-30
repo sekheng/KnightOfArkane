@@ -8,22 +8,36 @@ public class character : MonoBehaviour {
     public int attack_stat;
     public int defend_stat;
     public int speed_stat;
-    public int stst_points;
-    public Text display_stats;
-    private int temp_att;
-    private int temp_def;
-    private int temp_spd;
+    public int stat_points;
+    public int stat_points_used_att;
+    public int stat_points_used_def;
+    public int stat_points_used_spd;
+    public Text[] display_stats;
+    public StatChanger statChanger;
+    private int equip_att;
+    private int equip_def;
+    private int equip_spd;
+    public int temp_att;
+    public int temp_def;
+    public int temp_spd;
    
     // Use this for initialization
     void Start () {
-        
-        temp_att = 0;
-        temp_def = 0;
+
+        equip_att = 0;
+        equip_def = 0;
+        equip_spd = 0;
+        temp_att= 0;
+        temp_def= 0;
         temp_spd = 0;
-        attack_stat += temp_att;
-        defend_stat += temp_def;
-        speed_stat += temp_spd;
+        stat_points_used_att = 0;
+        stat_points_used_def = 0;
+        stat_points_used_spd = 0;
+        attack_stat += equip_att;
+        defend_stat += equip_def;
+        speed_stat += equip_spd;
         updateStatDisplay();
+        statChanger.showPreviewStatTextForAftCfm();
     }
 	
     public void updateStatDisplay()
@@ -34,7 +48,11 @@ public class character : MonoBehaviour {
         str.Append("Def:" + (defend_stat) + ", ");
         str.Append("Spd:" + (speed_stat));
 
-        display_stats.text = str.ToString();
+        foreach(Text temp in display_stats)
+        {
+            temp.text = str.ToString();
+        }
+        statChanger.showPreviewStatTextForAftCfm();
     }
 
     public void updateStatFromString(string str)
@@ -44,39 +62,40 @@ public class character : MonoBehaviour {
 
         string anotherString = str.Substring(4);
         int posofDelim = anotherString.IndexOf(",");
-        int.TryParse(anotherString.Substring(0,posofDelim), out temp_att);
+        int.TryParse(anotherString.Substring(0,posofDelim), out equip_att);
         
         anotherString = anotherString.Substring(posofDelim + 5);
         posofDelim = anotherString.IndexOf(",");
-        int.TryParse(anotherString.Substring(0, posofDelim), out temp_def);
+        int.TryParse(anotherString.Substring(0, posofDelim), out equip_def);
 
         anotherString = anotherString.Substring(posofDelim + 5);
-        int.TryParse(anotherString, out temp_spd);
+        int.TryParse(anotherString, out equip_spd);
 
-        attack_stat += temp_att;
-        defend_stat += temp_def;
-        speed_stat += temp_spd;
+        attack_stat += equip_att;
+        defend_stat += equip_def;
+        speed_stat += equip_spd;
         updateStatDisplay();
-
+        statChanger.showPreviewStatTextForAftCfm();
     }
 	
     public void removeItem(string str)
     {
         string anotherString = str.Substring(4);
         int posofDelim = anotherString.IndexOf(",");
-        int.TryParse(anotherString.Substring(0, posofDelim), out temp_att);
+        int.TryParse(anotherString.Substring(0, posofDelim), out equip_att);
 
         anotherString = anotherString.Substring(posofDelim + 5);
         posofDelim = anotherString.IndexOf(",");
-        int.TryParse(anotherString.Substring(0, posofDelim), out temp_def);
+        int.TryParse(anotherString.Substring(0, posofDelim), out equip_def);
 
         anotherString = anotherString.Substring(posofDelim + 5);
-        int.TryParse(anotherString, out temp_spd);
+        int.TryParse(anotherString, out equip_spd);
         // Debug.Log(str);
-        attack_stat -= temp_att;
-        defend_stat -= temp_def;
-        speed_stat -= temp_spd;
+        attack_stat -= equip_att;
+        defend_stat -= equip_def;
+        speed_stat -= equip_spd;
         updateStatDisplay();
+        statChanger.showPreviewStatTextForAftCfm();
     }
 
     public int getAttStat()
