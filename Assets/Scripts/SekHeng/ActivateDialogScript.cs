@@ -20,6 +20,7 @@ public class ActivateDialogScript : MonoBehaviour {
     void doTransaction()
     {
         thePlayerResource.SendMessage("modifyCoins", -(costCalculatioLogic.GetCostPerProduct() * costCalculatioLogic.GetCount()));
+        costCalculatioLogic.SendMessage("doTransaction");
     }
 
     public void ActivateDialog()
