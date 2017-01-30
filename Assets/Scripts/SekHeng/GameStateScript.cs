@@ -80,6 +80,7 @@ public class GameStateScript : MonoBehaviour {
             currentGameState = zeState; // Switch current game state
             foreach (GameObject zeUI in allUIElement)   // Turning the UI Element on
                 zeUI.SetActive(true);
+            //Debug.Log("Changing state to:" + zeState);
         }
   }
 
