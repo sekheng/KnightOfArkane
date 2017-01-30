@@ -20,14 +20,16 @@ public class character : MonoBehaviour {
     public int temp_att;
     public int temp_def;
     public int temp_spd;
-   
+
+
     // Use this for initialization
     void Start () {
 
         equip_att = 0;
         equip_def = 0;
         equip_spd = 0;
-        temp_att= 0;
+
+        temp_att = 0;
         temp_def= 0;
         temp_spd = 0;
         stat_points_used_att = 0;
@@ -74,6 +76,8 @@ public class character : MonoBehaviour {
         attack_stat += equip_att;
         defend_stat += equip_def;
         speed_stat += equip_spd;
+
+
         updateStatDisplay();
         statChanger.showPreviewStatTextForAftCfm();
     }
@@ -90,7 +94,8 @@ public class character : MonoBehaviour {
 
         anotherString = anotherString.Substring(posofDelim + 5);
         int.TryParse(anotherString, out equip_spd);
-        // Debug.Log(str);
+        
+
         attack_stat -= equip_att;
         defend_stat -= equip_def;
         speed_stat -= equip_spd;
