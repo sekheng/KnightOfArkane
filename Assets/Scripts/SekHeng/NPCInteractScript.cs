@@ -46,7 +46,7 @@ public class NPCInteractScript : MonoBehaviour {
         //Debug.Log("Pressed A");
         if (canInteractWithPlayer)
         {
-            Debug.Log("Interacting With Player");
+            //Debug.Log("Interacting With Player");
             // Not only do we have to change the state, we have to change the chat text box!
             GameStateScript.ChangeState(GameStateScript.GAMESTATE.CHATTING);
             GameObject[] AllChatUI = GameObject.FindGameObjectsWithTag("ChattingUI");

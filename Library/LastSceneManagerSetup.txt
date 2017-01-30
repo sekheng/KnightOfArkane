@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/AllScenes/TristanScene.unity
-=======
 - path: Assets/AllScenes/SekHengScene.unity
->>>>>>> 940ccd8104ba01d7ca099c30db131e3c1007cc1a
   isLoaded: 1
   isActive: 1
