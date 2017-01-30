@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E4F88B2B-958F-FA8E-58D5-97B354F1A310}</ProjectGuid>
+    <ProjectGuid>{AB40B3AE-6C9A-B1E1-B01B-22B1E324FC0E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -38,38 +38,13 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-     <Compile Include="Assets\Scripts\AutoScrollingScript.cs" />
-     <Compile Include="Assets\Scripts\ButtonFeedbackScript.cs" />
-     <Compile Include="Assets\Scripts\CoinUIScript.cs" />
-     <Compile Include="Assets\Scripts\DPadBehaviour.cs" />
-     <Compile Include="Assets\Scripts\DPadButtonScript.cs" />
-     <Compile Include="Assets\Scripts\EnemyScript.cs" />
-     <Compile Include="Assets\Scripts\FollowHeroScript.cs" />
-     <Compile Include="Assets\Scripts\GameStateScript.cs" />
-     <Compile Include="Assets\Scripts\HealthScript.cs" />
-     <Compile Include="Assets\Scripts\HealthUIScript.cs" />
-     <Compile Include="Assets\Scripts\HeroResourcesScript.cs" />
-     <Compile Include="Assets\Scripts\HeroScript.cs" />
-     <Compile Include="Assets\Scripts\InvokeMessageScript.cs" />
-     <Compile Include="Assets\Scripts\LevelUIScript.cs" />
-     <Compile Include="Assets\Scripts\LoadScene.cs" />
-     <Compile Include="Assets\Scripts\MessageSystem.cs" />
-     <Compile Include="Assets\Scripts\MinimapScript.cs" />
-     <Compile Include="Assets\Scripts\NPCInteractScript.cs" />
-     <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
-     <Compile Include="Assets\Scripts\ResourceUIScript.cs" />
-     <Compile Include="Assets\Scripts\Tristan\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Tristan\Options.cs" />
-=======
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\SekHeng\AutoScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ButtonFeedbackScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\CoinUIScript.cs" />
@@ -91,7 +66,8 @@
      <Compile Include="Assets\Scripts\SekHeng\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ResourceUIScript.cs" />
->>>>>>> 7e2313c8cfdfa58f08c4447917ae9474c641ad9d
+     <Compile Include="Assets\Scripts\Tristan\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Tristan\Options.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DoubleTapHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
@@ -99,18 +75,15 @@
      <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
-<<<<<<< HEAD
-=======
      <Compile Include="Assets\Scripts\zhaoyuan\character.cs" />
->>>>>>> 7e2313c8cfdfa58f08c4447917ae9474c641ad9d
      <Compile Include="Assets\Scripts\zhaoyuan\itemInformation.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\slotHolderInfo.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\slotstuff.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
