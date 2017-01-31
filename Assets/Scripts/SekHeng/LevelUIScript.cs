@@ -5,9 +5,6 @@ public class LevelUIScript : MonoBehaviour {
     [Tooltip("Set the level of the character!")]
     public int m_Level = 20;
 
-    [Tooltip("The Level UI to display")]
-    public GameObject theLevelUI;
-
     private SpriteRenderer characterSprite; // Because scale doesn't match up with Sprit'e width and height. This will be used for offset!
 
     void Start()

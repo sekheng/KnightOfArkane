@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/AllScenes/TristanScene.unity
+=======
+- path: Assets/AllScenes/ZhaoyuanScene.unity
+>>>>>>> 9d260b48e96f6aa98850eff0423792ba36b2c033
   isLoaded: 1
   isActive: 1

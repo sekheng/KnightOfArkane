@@ -26,6 +26,7 @@ public class GameStateScript : MonoBehaviour {
 
     void Start()
     {
+        currentGameState = GAMESTATE.PLAYING;
         StateAndUI_Dictionary = new Dictionary<GAMESTATE, GameObject[]>();
         GameObject[] PlayingUI = GameObject.FindGameObjectsWithTag("GameplayUI");
         StateAndUI_Dictionary.Add(GAMESTATE.PLAYING, PlayingUI);
@@ -33,6 +34,9 @@ public class GameStateScript : MonoBehaviour {
         StateAndUI_Dictionary.Add(GAMESTATE.CHATTING, ChatingUI);
         foreach (GameObject zeUI in ChatingUI)
             zeUI.SetActive(false);
+        //foreach (GameObject zeUI in PlayingUI)
+        //    zeUI.SetActive(false);
+        //ChangeState(currentGameState);
     }
 	
 	// Update is called once per frame
@@ -73,13 +77,16 @@ public class GameStateScript : MonoBehaviour {
 
     static public void ChangeState(GAMESTATE zeState)   // Changing the state then turning on the UI elements in that state
     {
+        //Debug.Log("Changing state to:" + zeState);
         GameObject[] allUIElement = null;
+        //Debug.Log("Current State:" + currentGameState);
         if (zeState != currentGameState && StateAndUI_Dictionary.TryGetValue(zeState, out allUIElement))   // If can find the states and current state isn't the changed state, then do it!
         {
             turnOffUI_ElementInThatState(currentGameState); // Turn off the UI Element of current game state
             currentGameState = zeState; // Switch current game state
             foreach (GameObject zeUI in allUIElement)   // Turning the UI Element on
                 zeUI.SetActive(true);
+            //Debug.Log("Changing state to:" + zeState);
         }
   }
 

@@ -8,9 +8,20 @@ using UnityEngine.UI;
 public class GetCostAndQuantityScript : MonoBehaviour {
 
     private int theCostPerProduct = 0;
-    private int Max_Products = 0;
+    //private int Max_Products = 0;
     private int m_count = 0;
     private Text ownText;   // To change the text!
+    private itemInformation itemStuff;
+
+    void setItemInformation(itemInformation zeItemInform)
+    {
+        itemStuff = zeItemInform;
+    }
+
+    void doTransaction()
+    {
+        itemStuff.item_count -= m_count;    // minus the amount!
+    }
 
     public int GetCostPerProduct()
     {
@@ -31,15 +42,15 @@ public class GetCostAndQuantityScript : MonoBehaviour {
         //Debug.Log("Receiving Cost:" + zeCost);
         theCostPerProduct = zeCost;
     }
-    void setMaxProducts(int zeAmount)   // Amount of items to buy
-    {
-        //Debug.Log("Receiving Amount:" + zeAmount);
-        Max_Products = zeAmount;
-    }
+    //void setMaxProducts(int zeAmount)   // Amount of items to buy
+    //{
+    //    //Debug.Log("Receiving Amount:" + zeAmount);
+    //    Max_Products = zeAmount;
+    //}
 
     void Increment()    // Increment the amount of items which the player want to buy!
     {
-        m_count = Mathf.Min(m_count + 1, Max_Products);
+        m_count = Mathf.Min(m_count + 1, itemStuff.item_count);
         UpdateDisplay();
     }
     void Decrement()    // Decrement the amount of items which the player want to buy!
