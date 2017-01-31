@@ -68,10 +68,12 @@
      <Compile Include="Assets\Scripts\SekHeng\MinimapScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\PauseButtonScript.cs" />
+     <Compile Include="Assets\Scripts\SekHeng\PressingBackScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ResourceUIScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\UpdateItemCountScript.cs" />
      <Compile Include="Assets\Scripts\Tristan\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Tristan\Options.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\AudioWhenPressed.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\CustomDialog.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
@@ -80,6 +82,7 @@
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\QuitButton.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\StatChanger.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\Vibration.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\character.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\itemInformation.cs" />
