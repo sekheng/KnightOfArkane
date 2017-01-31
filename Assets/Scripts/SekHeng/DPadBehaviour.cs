@@ -55,6 +55,7 @@ public class DPadBehaviour : MonoBehaviour {
         RectTransform[] zeChildren = GetComponentsInChildren<RectTransform>();
         foreach (RectTransform eachMoveButton in zeChildren)
         {
+            if (gameObject.name != eachMoveButton.gameObject.name)
             // First part will be checking whether the finger's X position is inside the X-boundary of the buttons
             // Second part is checking whether the finger's Y position is inside the Y-boundary of the buttons
             if (Input.mousePosition.x < eachMoveButton.position.x + (eachMoveButton.rect.width * 0.25f) && Input.mousePosition.x > eachMoveButton.position.x - (eachMoveButton.rect.width * 0.25f)
