@@ -45,10 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
      <Compile Include="Assets\Scripts\SekHeng\ActivateDialogScript.cs" />
->>>>>>> 940ccd8104ba01d7ca099c30db131e3c1007cc1a
      <Compile Include="Assets\Scripts\SekHeng\AutoScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ButtonFeedbackScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\CoinUIScript.cs" />
@@ -72,19 +69,16 @@
      <Compile Include="Assets\Scripts\SekHeng\NPCInteractScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\PauseButtonScript.cs" />
      <Compile Include="Assets\Scripts\SekHeng\ResourceUIScript.cs" />
-<<<<<<< HEAD
-=======
      <Compile Include="Assets\Scripts\SekHeng\UpdateItemCountScript.cs" />
->>>>>>> 940ccd8104ba01d7ca099c30db131e3c1007cc1a
      <Compile Include="Assets\Scripts\Tristan\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Tristan\Options.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\ButtonMovenment.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\CustomDialog.cs" />
-     <Compile Include="Assets\Scripts\zhaoyuan\DoubleTapHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\DragHandler.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuButtonBehaviour.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\MenuSlot.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\OptionsManager.cs" />
+     <Compile Include="Assets\Scripts\zhaoyuan\QuitButton.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\StatChanger.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\backbutton.cs" />
      <Compile Include="Assets\Scripts\zhaoyuan\character.cs" />
